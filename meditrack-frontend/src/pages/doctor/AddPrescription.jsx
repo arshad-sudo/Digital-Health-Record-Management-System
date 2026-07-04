@@ -59,7 +59,11 @@ const AddPrescription = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="Add Prescription" subtitle="Prescribe medications to your patients.">
+    <DashboardLayout>
+      <div >
+        <h2 style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>Add Prescription</h2>
+        <h4 style={{color:'var(--teal-400)'}}>Prescribe medications to your patients.</h4>
+      </div>
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="mt-card p-4 p-md-5">

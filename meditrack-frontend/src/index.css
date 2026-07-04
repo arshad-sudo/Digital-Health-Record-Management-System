@@ -6,6 +6,7 @@
     --teal-200:  #5DCAA5;
     --teal-400:  #1D9E75;
     --teal-600:  #0F6E56;
+    --teal-600:rgb(151, 99, 39);
     --teal-800:  #085041;
     --teal-900:  #04342C;
     --slate-400: #8FA3B3;
@@ -21,7 +22,7 @@
   --primary-light: #38bdf8;
   --secondary: #6366f1;
   --secondary-dark: #4f46e5;
-  --accent: #10b981;
+  --accent: #10b6b9;
   --accent-dark: #059669;
   --danger: #ef4444;
   --warning: #f59e0b;
@@ -141,8 +142,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-outline-mt {
   background: transparent;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
+  border: 1.5px solid #14B8A6;
+  color: #14B8A6;
   font-weight: 600;
   padding: 11px 28px;
   border-radius: var(--radius-sm);
@@ -156,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-mt:hover {
-  background: var(--primary);
+  background: #14B8A6;
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow-primary);
@@ -207,14 +208,19 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-.mt-input:focus {
-  border-color: var(--primary);
-  background: rgba(14, 165, 233, 0.05);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
-  color: var(--text-primary);
+.mt-input option {
+    background: #1e2a47;
+    color: white;
 }
 
-.mt-input::placeholder { color: var(--text-muted); }
+.mt-input:focus {
+  border-color: var(--primary-light);
+  background: rgba(14, 165, 233, 0.05);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  color: var(--primary-light);
+}
+
+.mt-input::placeholder {  color: var(--primary-light);}
 
 .mt-label {
   font-size: 0.85rem;
@@ -375,8 +381,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .mv-hcard {
     position: absolute;
-    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
-    border-radius: 16px; padding: 1.25rem 1.5rem; backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.553); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px; padding: 1.25rem 1.5rem; backdrop-filter: blur(2px);
   }
   .mv-hcard-main   { width: 300px; top: 0;    left: 0; }
   .mv-hcard-vitals { width: 220px; top: 180px; right: 0; border-color: rgba(29,158,117,.3); }
@@ -450,11 +456,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .mv-hero-sub {
     /* font-size: 1.05rem; color: var(--teal-400); line-height: 1.7; */
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem; animation: fadeUp .8s .5s ease both;
   }
   .mv-hero-title {
     font-family: var(--font-display);
-    color: var(--slate-400);
+    color: #F8FAFC;
     font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 700;
     line-height: 1.1; margin-bottom: 1.5rem;
     animation: fadeUp .8s .35s ease both;

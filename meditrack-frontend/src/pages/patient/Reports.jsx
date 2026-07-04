@@ -28,13 +28,17 @@ const Reports = () => {
   const downloadReport = (path, name) => {
     // In a real app, you would fetch the blob or redirect to the static file.
     // For this demo, we'll just open the API URL.
-    window.open(`http://localhost:8080/${path}`, '_blank');
+    window.open(`http://localhost:8080/${path}`,'_blank');
   };
 
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="Medical Reports" subtitle="Access your lab results, scans, and documents.">
+    <DashboardLayout>
+      <div style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>
+        <h1>Medical Reports</h1>
+        <h6 style={{color:'var(--teal-400)'}}>Access your lab results, scans, and documents.</h6>
+      </div>
       {reports.length === 0 ? (
         <div className="mt-card p-5 text-center">
           <div className="mt-avatar mx-auto mb-3" style={{ width: '80px', height: '80px', fontSize: '2rem', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)' }}>
@@ -56,7 +60,7 @@ const Reports = () => {
                     {r.fileSize}
                   </span>
                 </div>
-                <h6 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', wordBreak: 'break-all' }}>{r.fileName}</h6>
+                <h6 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '8px', wordBreak: 'break-all',color:'var(--gold-400)'}}>{r.fileName}</h6>
                 <div className="d-flex align-items-center gap-2 mb-4" style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   <span className="mt-badge badge-confirmed py-1 px-2">{r.reportType}</span>
                   <span><FaCalendarAlt /> {r.uploadDate}</span>

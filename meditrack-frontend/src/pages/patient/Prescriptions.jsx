@@ -28,7 +28,11 @@ const Prescriptions = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="My Prescriptions" subtitle="View and manage your digital prescriptions.">
+    <DashboardLayout>
+      <div style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>
+        <h1>My Prescriptions</h1>
+        <h6 style={{color:'var(--teal-400)'}}>View and manage your digital prescriptions.</h6>
+      </div>
       {prescriptions.length === 0 ? (
         <div className="mt-card p-5 text-center">
           <div className="mt-avatar mx-auto mb-3" style={{ width: '80px', height: '80px', fontSize: '2rem', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)' }}>
@@ -48,7 +52,7 @@ const Prescriptions = () => {
                       <FaPills />
                     </div>
                     <div>
-                      <h6 className="m-0" style={{ fontSize: '1.1rem', fontWeight: 700 }}>{p.medicineName}</h6>
+                      <h6 className="m-0" style={{ fontSize: '1.1rem', fontWeight: 700,color:'var(--gold-400)' }}>{p.medicineName}</h6>
                       <span className="mt-badge badge-confirmed" style={{ fontSize: '0.7rem' }}>{p.dosage}</span>
                     </div>
                   </div>

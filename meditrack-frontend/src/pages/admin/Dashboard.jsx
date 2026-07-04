@@ -78,7 +78,13 @@ const AdminDashboard = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="System Administration" subtitle="Monitor and manage the entire MediTrack platform.">
+    <DashboardLayout>
+      <div >
+        <h2 style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>System Administration</h2>
+        <h4 style={{color:'var(--teal-400)'}}>Monitor and manage the entire MediTrack platform.</h4>
+        <br></br>
+        <br></br>
+      </div>
       {/* Tabs */}
       <div className="d-flex gap-3 mb-4 border-bottom border-secondary pb-3">
         <button onClick={() => setActiveTab('overview')} className={`btn ${activeTab === 'overview' ? 'btn-primary' : 'btn-outline-secondary'}`}>Overview</button>
@@ -87,40 +93,40 @@ const AdminDashboard = () => {
       </div>
 
       {activeTab === 'overview' && (
-        <div className="row g-4 animate-fadeIn">
+        <div className="row g-5 animate-fadeIn" >
           <div className="col-md-4 col-sm-6">
             <div className="stat-card p-4">
               <FaUsers className="stat-icon text-primary" />
-              <div className="stat-number">{stats?.totalPatients || 0}</div>
-              <div className="stat-label">Total Patients</div>
+              <div className="stat-number" style={{color:'var(--teal-600)'}}>{stats?.totalPatients || 0}</div>
+              <div className="stat-label" style={{color:'var(--accent)'}}>Total Patients</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6">
             <div className="stat-card p-4">
               <FaUserMd className="stat-icon text-success" />
-              <div className="stat-number">{stats?.totalDoctors || 0}</div>
-              <div className="stat-label">Total Doctors</div>
+              <div className="stat-number" style={{color:'var(--teal-600)'}}>{stats?.totalDoctors || 0}</div>
+              <div className="stat-label" style={{color:'var(--accent)'}}>Total Doctors</div>
             </div>
           </div>
           <div className="col-md-4 col-sm-6">
             <div className="stat-card p-4">
               <FaCalendarCheck className="stat-icon text-warning" />
-              <div className="stat-number">{stats?.totalAppointments || 0}</div>
-              <div className="stat-label">Appointments</div>
+              <div className="stat-number" style={{color:'var(--teal-600)'}}>{stats?.totalAppointments || 0}</div>
+              <div className="stat-label" style={{color:'var(--accent)'}}>Appointments</div>
             </div>
           </div>
           <div className="col-md-6">
             <div className="stat-card p-4">
               <FaPills className="stat-icon text-info" />
-              <div className="stat-number">{stats?.totalPrescriptions || 0}</div>
-              <div className="stat-label">Prescriptions Issued</div>
+              <div className="stat-number" style={{color:'var(--teal-600)'}}>{stats?.totalPrescriptions || 0}</div>
+              <div className="stat-label" style={{color:'var(--accent)'}}>Prescriptions Issued</div>
             </div>
           </div>
           <div className="col-md-6">
             <div className="stat-card p-4">
               <FaFileMedical className="stat-icon text-danger" />
-              <div className="stat-number">{stats?.totalReports || 0}</div>
-              <div className="stat-label">Medical Reports</div>
+              <div className="stat-number" style={{color:'var(--teal-600)'}}>{stats?.totalReports || 0}</div>
+              <div className="stat-label" style={{color:'var(--accent)'}}>Medical Reports</div>
             </div>
           </div>
         </div>
@@ -129,7 +135,7 @@ const AdminDashboard = () => {
       {activeTab === 'doctors' && (
         <div className="animate-fadeIn">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h5 className="m-0">Registered Doctors</h5>
+            <h5 className="m-0" style={{color:'var(--accent)'}}>Registered Doctors</h5>
             <button onClick={() => setShowAddDoctor(!showAddDoctor)} className="btn-primary-mt">
               <FaUserPlus /> {showAddDoctor ? 'Cancel' : 'Add New Doctor'}
             </button>

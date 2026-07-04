@@ -4,6 +4,7 @@ import { FaHospital, FaEnvelope, FaLock, FaUserMd, FaUser, FaShieldAlt, FaEye, F
 import { useAuth } from '../context/AuthContext';
 import { authAPI } from '../services/api';
 import toast from 'react-hot-toast';
+import logo from '../assets/hosback.jpg';
 
 const Login = () => {
   const [searchParams] = useSearchParams();
@@ -49,7 +50,9 @@ const Login = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--dark-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+    <div style={{  backgroundImage: `url(${logo})`, backgroundSize: 'cover', 
+       backgroundSize: 'cover', 
+      height: '700px' , display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '30px' }}>
       {/* Background orbs */}
       <div style={{ position: 'fixed', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%)', top: '-100px', right: '-100px', pointerEvents: 'none' }} />
       <div style={{ position: 'fixed', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)', bottom: '-100px', left: '-100px', pointerEvents: 'none' }} />
@@ -61,7 +64,7 @@ const Login = () => {
             <FaHospital style={{ color: '#0ea5e9', WebkitTextFillColor: '#0ea5e9' }} />
             MediTrack
           </Link>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '8px' }}>Sign in to your account</p>
+          <p style={{ color: 'var(--slate-900)', fontSize: '0.9rem', marginTop: '8px' }}>Sign in to your account</p>
         </div>
 
         <div className="mt-card p-4">
@@ -121,11 +124,11 @@ const Login = () => {
               </div>
             </div>
 
-            {role === 'ADMIN' && (
+            {/* {role === 'ADMIN' && (
               <div className="mb-3 p-3" style={{ background: 'rgba(99,102,241,0.1)', borderRadius: '10px', border: '1px solid rgba(99,102,241,0.2)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                 <strong>Demo Admin:</strong> admin@meditrack.com / admin123
               </div>
-            )}
+            )} */}
 
             <button type="submit" className="btn-primary-mt w-100 justify-content-center" disabled={loading} style={{ marginTop: '8px' }}>
               {loading ? <><span className="spinner-border spinner-border-sm me-2" />Signing in...</> : `Sign in as ${role.charAt(0) + role.slice(1).toLowerCase()}`}

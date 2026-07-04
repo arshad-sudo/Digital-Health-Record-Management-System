@@ -3,6 +3,7 @@ C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\medit
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\exception\GlobalExceptionHandler.java
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\security\JwtFilter.java
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\dto\AppointmentRequest.java
+C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\config\WebConfig.java
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\dto\PatientRegisterRequest.java
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\model\Patient.java
 C:\Users\aarsh\OneDrive\Documents\anti\meditrack-backend\src\main\java\com\meditrack\controller\AdminController.java

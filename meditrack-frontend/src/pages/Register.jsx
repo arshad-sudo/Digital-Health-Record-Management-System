@@ -133,7 +133,7 @@ const Register = () => {
               <div className="col-md-4">
                 <label className="mt-label">Blood Group</label>
                 <div style={{ position: 'relative' }}>
-                  <FaDroplet style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                  <FaDroplet style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--slate-900)' }} />
                   <select className="mt-input" style={{ paddingLeft: '40px' }} name="bloodGroup" value={formData.bloodGroup} onChange={handleChange}>
                     <option value="">Select</option>
                     <option value="A+">A+</option><option value="A-">A-</option>

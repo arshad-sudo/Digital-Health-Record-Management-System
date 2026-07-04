@@ -36,19 +36,25 @@ const PatientDashboard = () => {
     return <span className={`mt-badge badge-${s}`}>{status}</span>;
   };
 
-  if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
+  if (loading) return <DashboardLayout><div className="text-center py-5" ><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title={`Welcome, ${profile?.fullName?.split(' ')[0]}!`} subtitle="Here is an overview of your health profile.">
+    <DashboardLayout >
+      <div style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>
+        <h2>{`Welcome, ${profile?.fullName?.split(' ')[0]}!`}</h2>
+      </div>
+          
+
+      
       {/* Quick Actions */}
-      <div className="row g-4 mb-5">
+      <div className="row g-4 mb-5" >
         <div className="col-md-4">
           <div className="mt-card p-4 text-center h-100">
             <div className="mt-avatar mx-auto mb-3" style={{ width: '60px', height: '60px', fontSize: '1.5rem', background: 'rgba(14,165,233,0.1)', color: 'var(--primary)' }}>
               <FaCalendarPlus />
             </div>
-            <h5 className="mb-2">Book Appointment</h5>
-            <p className="text-muted-mt mb-3" style={{ fontSize: '0.85rem' }}>Schedule a visit with our experts</p>
+            <h5 className="mb-2" style={{ color: 'var(--secondary-dark)'}}>Book Appointment</h5>
+            <p className=" mb-3" style={{ fontSize: '0.85rem',color: 'var(--accent)'}}>Schedule a visit with our experts</p>
             <Link to="/patient/book-appointment" className="btn-primary-mt w-100 justify-content-center">Book Now</Link>
           </div>
         </div>
@@ -57,8 +63,8 @@ const PatientDashboard = () => {
             <div className="mt-avatar mx-auto mb-3" style={{ width: '60px', height: '60px', fontSize: '1.5rem', background: 'rgba(99,102,241,0.1)', color: 'var(--secondary)' }}>
               <FaFilePrescription />
             </div>
-            <h5 className="mb-2">My Prescriptions</h5>
-            <p className="text-muted-mt mb-3" style={{ fontSize: '0.85rem' }}>View your past and current meds</p>
+            <h5 className="mb-2"  style={{ color: 'var(--secondary-dark)'}}>My Prescriptions</h5>
+            <p className=" mb-3" style={{ fontSize: '0.85rem',color: 'var(--accent)'}}>View your past and current meds</p>
             <Link to="/patient/prescriptions" className="btn-outline-mt w-100 justify-content-center">View Details</Link>
           </div>
         </div>
@@ -67,8 +73,8 @@ const PatientDashboard = () => {
             <div className="mt-avatar mx-auto mb-3" style={{ width: '60px', height: '60px', fontSize: '1.5rem', background: 'rgba(16,185,129,0.1)', color: 'var(--accent)' }}>
               <FaNotesMedical />
             </div>
-            <h5 className="mb-2">Medical Reports</h5>
-            <p className="text-muted-mt mb-3" style={{ fontSize: '0.85rem' }}>Access your test results & scans</p>
+            <h5 className="mb-2"  style={{ color: 'var(--secondary-dark)'}}>Medical Reports</h5>
+            <p className=" mb-3" style={{ fontSize: '0.85rem',color: 'var(--accent)' }}>Access your test results & scans</p>
             <Link to="/patient/reports" className="btn-outline-mt w-100 justify-content-center" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>View Reports</Link>
           </div>
         </div>
@@ -80,12 +86,12 @@ const PatientDashboard = () => {
         <div className="col-lg-8">
           <div className="mt-card p-4 h-100">
             <div className="d-flex justify-content-between align-items-center mb-4">
-              <h5 className="m-0 d-flex align-items-center gap-2"><FaClock className="text-primary" /> Recent Appointments</h5>
-              <Link to="/patient/book-appointment" style={{ fontSize: '0.85rem', color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}>See All</Link>
+              <h5 className="m-0 d-flex align-items-center gap-2" style={{ color: 'var(--secondary-dark)'}}><FaClock className="text-primary" /> Recent Appointments</h5>
+              <Link to="/patient/book-appointment" style={{ fontSize: '0.85rem',  color: 'var(--secondary-dark)', textDecoration: 'none', fontWeight: 600 }}>See All</Link>
             </div>
             
             {appointments.length === 0 ? (
-              <div className="text-center py-4" style={{ color: 'var(--text-muted)' }}>
+              <div className="text-center py-4" style={{ color: 'var(--accent)' }}>
                 <p>No recent appointments found.</p>
               </div>
             ) : (
@@ -122,22 +128,22 @@ const PatientDashboard = () => {
         {/* Profile Summary */}
         <div className="col-lg-4">
           <div className="mt-card p-4 h-100">
-            <h5 className="mb-4">Profile Summary</h5>
+            <h5 className="mb-4" style={{ color: 'var(--secondary-dark)'}}>Profile Summary</h5>
             <div className="d-flex flex-column gap-3">
               <div className="d-flex justify-content-between border-bottom border-secondary pb-2 border-opacity-50">
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Age/Gender</span>
-                <span style={{ fontWeight: 500 }}>{profile?.age || 'N/A'} / {profile?.gender || 'N/A'}</span>
+                <span style={{ color: 'var(--teal-400)', fontSize: '0.9rem' }}>Age/Gender</span>
+                <span style={{ fontWeight: 500, color:'var(--primary-light)'}}>{profile?.age || 'N/A'} / {profile?.gender || 'N/A'}</span>
               </div>
               <div className="d-flex justify-content-between border-bottom border-secondary pb-2 border-opacity-50">
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Blood Group</span>
+                <span style={{ color: 'var(--teal-400)', fontSize: '0.9rem' }}>Blood Group</span>
                 <span style={{ fontWeight: 500, color: 'var(--danger)' }}>{profile?.bloodGroup || 'N/A'}</span>
               </div>
               <div className="d-flex justify-content-between border-bottom border-secondary pb-2 border-opacity-50">
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Contact</span>
-                <span style={{ fontWeight: 500 }}>{profile?.contactNumber || 'N/A'}</span>
+                <span style={{ color: 'var(--teal-400)', fontSize: '0.9rem' }}>Contact</span>
+                <span style={{ fontWeight: 500,color:'var(--primary-light)' }}>{profile?.contactNumber || 'N/A'}</span>
               </div>
               <div>
-                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem', display: 'block', marginBottom: '4px' }}>Medical History</span>
+                <span style={{ color: 'var(--teal-400)', fontSize: '0.9rem', display: 'block', marginBottom: '4px' }}>Medical History</span>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)', margin: 0, padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
                   {profile?.medicalHistory || 'No history recorded.'}
                 </p>
@@ -146,6 +152,7 @@ const PatientDashboard = () => {
           </div>
         </div>
       </div>
+     
     </DashboardLayout>
   );
 };

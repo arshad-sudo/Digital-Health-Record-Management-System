@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaHospital, FaUserMd, FaUser, FaShieldAlt, FaCalendarAlt, FaFileMedical, FaPills, FaHeartbeat } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
+import im from '../assets/hosback.jpg';
 
 const Welcome = () => {
   const { user } = useAuth();
@@ -22,8 +23,9 @@ const Welcome = () => {
     { icon: <FaHeartbeat />, title: 'Health Tracking', desc: 'Monitor your health history and treatment progress.' },
   ];
 
+
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--dark-bg)' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--dark-bg)' }}>
       {/* Navbar */}
       <nav className="mt-navbar">
         <div className="container-fluid px-4 d-flex justify-content-between align-items-center">
@@ -39,21 +41,29 @@ const Welcome = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section d-flex align-items-center" style={{ minHeight: '90vh' }}>
+      <section
+        className="hero-section d-flex align-items-center"
+      style={{
+                minHeight: '90vh',
+                backgroundImage: `linear-gradient(rgba(38, 68, 114, 0.58), rgb(38, 68, 113)), url(${im})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+             }}>
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="animate-fadeInUp" style={{ opacity: 0 }}>
                 <div className="d-inline-flex align-items-center gap-2 mb-4 px-3 py-2" style={{
-                  background: 'rgba(14,165,233,0.1)', border: '1px solid rgba(14,165,233,0.2)',
-                  borderRadius: '20px', fontSize: '0.85rem', color: 'var(--primary)'
+                  background: 'rgba(15, 150, 212, 0.76)', border: '1px solid rgba(14,165,233,0.2)',
+                  borderRadius: '20px', fontSize: '0.85rem', color: 'rgb(255, 255, 255)'
                 }}>
                   <FaHeartbeat /> Digital Health Revolution
                 </div>
                  <h1 className="mv-hero-title">
                      Your Health Records,<br />
-                    <span className="accent">Unified</span> &amp;<br />
-                    <span className="dim">Accessible.</span>
+                    <span className="accent" style={{color:'#14B8A6'}}>Unified</span> &amp;<br />
+                    <span className="dim" style={{color:'#3B82F6'}}>Accessible.</span>
                    </h1>
                 {/* <h1 style={{ fontSize: '3.5rem', fontWeight: 900, lineHeight: 1.1, marginBottom: '24px' }}>
                   Your Health Records,{' '}
@@ -73,7 +83,7 @@ const Welcome = () => {
                   <Link to="/login?role=doctor" className="btn-outline-mt" style={{ fontSize: '1rem', padding: '14px 32px' }}>
                     <FaUserMd /> Doctor Login
                   </Link>
-                  <Link to="/login?role=admin" className="btn-outline-mt" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'var(--secondary)', color: 'var(--secondary)' }}>
+                  <Link to="/login?role=admin" className="btn-outline-mt" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'var(--secondary', color: 'white',background:'#334155' }}>
                     <FaShieldAlt /> Admin
                   </Link>
                 </div>
@@ -179,7 +189,7 @@ const Welcome = () => {
       {/* Footer */}
       <footer style={{ background: 'var(--dark-surface)', borderTop: '1px solid var(--dark-border)', padding: '32px 0' }}>
         <div className="container text-center">
-          <div className="brand mb-2" style={{ fontSize: '1.4rem', display: 'inline-block' }}>
+          <div className="brand mb-2" style={{ fontSize: '1.4rem', display: 'inline-block', color:'var(--secondary-dark)' }}>
             MediTrack
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>

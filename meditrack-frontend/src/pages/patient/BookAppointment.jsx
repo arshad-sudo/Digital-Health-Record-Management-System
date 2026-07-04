@@ -59,7 +59,11 @@ const BookAppointment = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="Book Appointment" subtitle="Schedule a consultation with our experts.">
+    <DashboardLayout>
+      <div style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>
+        <h1>Book Appointment</h1>
+        <h6 style={{color:'var(--teal-400)'}}>Schedule a consultation with our experts.</h6>
+      </div>
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="mt-card p-4 p-md-5">

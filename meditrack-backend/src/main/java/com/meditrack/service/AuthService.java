@@ -52,9 +52,9 @@ public class AuthService {
             return new LoginResponse(token, "DOCTOR", doctor.getId(), doctor.getDoctorName(), doctor.getEmail());
         } else if ("ADMIN".equals(role)) {
             // Hardcoded admin for simplicity
-            if ("admin@meditrack.com".equals(req.getEmail()) && "admin123".equals(req.getPassword())) {
-                String token = jwtUtil.generateToken("admin@meditrack.com", "ADMIN", 0L);
-                return new LoginResponse(token, "ADMIN", 0L, "Admin", "admin@meditrack.com");
+            if ("admin@med.com".equals(req.getEmail()) && "admin123".equals(req.getPassword())) {
+                String token = jwtUtil.generateToken("admin@med.com", "ADMIN", 0L);
+                return new LoginResponse(token, "ADMIN", 0L, "Admin", "admin@med.com");
             }
             throw new RuntimeException("Invalid admin credentials");
         } else {

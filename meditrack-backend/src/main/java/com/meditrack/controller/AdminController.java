@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -68,14 +69,29 @@ public class AdminController {
         }
     }
 
+    @Transactional
     @DeleteMapping("/patients/{id}")
     public ResponseEntity<?> deletePatient(@PathVariable Long id) {
+        appointmentRepository.deleteAll(appointmentRepository.findByPatientId(id));
+        prescriptionRepository.deleteAll(prescriptionRepository.findByPatientId(id));
+        reportRepository.deleteAll(reportRepository.findByPatientId(id));
+
         patientRepository.deleteById(id);
         return ResponseEntity.ok(Map.of("message", "Patient deleted"));
     }
 
+    @Transactional
     @DeleteMapping("/doctors/{id}")
     public ResponseEntity<?> deleteDoctor(@PathVariable Long id) {
+        appointmentRepository.deleteAll(appointmentRepository.findByDoctorId(id));
+        prescriptionRepository.deleteAll(prescriptionRepository.findByDoctorId(id));
+        
+        // Nullify doctor reference in medical reports to keep patient records
+        reportRepository.findByDoctorId(id).forEach(report -> {
+            report.setDoctor(null);
+            reportRepository.save(report);
+        });
+
         doctorRepository.deleteById(id);
         return ResponseEntity.ok(Map.of("message", "Doctor deleted"));
     }

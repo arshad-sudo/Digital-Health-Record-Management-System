@@ -72,14 +72,18 @@ const UploadReport = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title="Upload Medical Report" subtitle="Securely upload test results, scans, and documents.">
+    <DashboardLayout>
+      <div >
+        <h2 style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>Upload Medical Report</h2>
+        <h4 style={{color:'var(--teal-400)'}}>Securely upload test results, scans, and documents.</h4>
+      </div>
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="mt-card p-4 p-md-5">
             <form onSubmit={handleSubmit}>
               <div className="row g-4">
                 <div className="col-md-12">
-                  <label className="mt-label">Select Patient *</label>
+                  <label className="mt-label" style={{color:'var(--teal-200)'}}>Select Patient *</label>
                   <div style={{ position: 'relative' }}>
                     <FaUserInjured style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
                     <select className="mt-input" style={{ paddingLeft: '40px' }} name="patientId" value={formData.patientId} onChange={handleChange} required>
@@ -92,7 +96,7 @@ const UploadReport = () => {
                 </div>
 
                 <div className="col-md-12">
-                  <label className="mt-label">Report Type *</label>
+                  <label className="mt-label" style={{color:'var(--teal-200)'}}>Report Type *</label>
                   <div style={{ position: 'relative' }}>
                     <FaTags style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
                     <select className="mt-input" style={{ paddingLeft: '40px' }} name="reportType" value={formData.reportType} onChange={handleChange} required>
@@ -110,7 +114,7 @@ const UploadReport = () => {
                 </div>
 
                 <div className="col-md-12">
-                  <label className="mt-label">Upload File *</label>
+                  <label className="mt-label"  style={{color:'var(--teal-200)'}}>Upload File *</label>
                   <div 
                     style={{ 
                       border: '2px dashed var(--dark-border)', 

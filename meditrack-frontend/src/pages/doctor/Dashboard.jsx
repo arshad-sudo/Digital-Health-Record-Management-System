@@ -55,40 +55,44 @@ const DoctorDashboard = () => {
   if (loading) return <DashboardLayout><div className="text-center py-5"><span className="spinner-border text-primary" /></div></DashboardLayout>;
 
   return (
-    <DashboardLayout title={`Dr. ${profile?.doctorName}`} subtitle={`Department of ${profile?.department} • ${profile?.specialization}`}>
+    <DashboardLayout>
+      <div >
+        <h2 style={{ paddingTop: '50px',fontSize: '32px',fontWeight: '700',color: 'var(--secondary-dark)', }}>{`Dr. ${profile?.doctorName}`}</h2>
+        <h4 style={{color:'var(--teal-400)'}}>{`Department of ${profile?.department} • ${profile?.specialization}`}</h4>
+      </div>
       <div className="row g-4 mb-4">
         <div className="col-md-4">
           <div className="stat-card p-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <FaCalendarCheck className="text-primary fs-3" />
-              <span className="fs-2 fw-bold">{todaysAppointments.length}</span>
+              <span className="fs-2 fw-bold"  style={{color:'var(--accent)'}}>{todaysAppointments.length}</span>
             </div>
-            <h6 className="text-muted m-0">Today's Patients</h6>
+            <h6 className="m-0" style={{color:'var(--primary-light)'}}>Today's Patients</h6>
           </div>
         </div>
         <div className="col-md-4">
           <div className="stat-card p-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <FaStethoscope className="text-warning fs-3" />
-              <span className="fs-2 fw-bold">{pendingAppointments.length}</span>
+              <span className="fs-2 fw-bold"  style={{color:'var(--accent)'}}>{pendingAppointments.length}</span>
             </div>
-            <h6 className="text-muted m-0">Pending Requests</h6>
+            <h6 className=" m-0 "  style={{color:'var(--primary-light)'}}>Pending Requests</h6>
           </div>
         </div>
         <div className="col-md-4">
           <div className="stat-card p-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <FaUserInjured className="text-success fs-3" />
-              <span className="fs-2 fw-bold">{appointments.length}</span>
+              <span className="fs-2 fw-bold" style={{color:'var(--accent)'}}>{appointments.length}</span>
             </div>
-            <h6 className="text-muted m-0">Total Appointments</h6>
+            <h6 className="m-0" style={{color:'var(--primary-light)'}}>Total Appointments</h6>
           </div>
         </div>
       </div>
 
       <div className="mt-card p-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h5 className="m-0">Appointment Management</h5>
+          <h5 className="m-0" style={{color:'var(--primary-light)'}}>Appointment Management</h5>
         </div>
         
         {appointments.length === 0 ? (
