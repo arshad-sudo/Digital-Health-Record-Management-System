@@ -25,7 +25,11 @@ const Register = () => {
     }
     setLoading(true);
     try {
-      await authAPI.registerPatient(formData);
+      const payload = { ...formData };
+      if (!payload.dob) payload.dob = null;
+      if (!payload.age) payload.age = null;
+      
+      await authAPI.registerPatient(payload);
       toast.success('Registration successful! Please login.');
       navigate('/login?role=patient');
     } catch (err) {
