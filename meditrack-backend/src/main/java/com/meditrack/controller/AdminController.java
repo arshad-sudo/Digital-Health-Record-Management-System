@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000"})
+
 public class AdminController {
 
     @Autowired private PatientRepository patientRepository;
