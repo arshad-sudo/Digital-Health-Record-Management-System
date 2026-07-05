@@ -17,7 +17,7 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOriginPatterns(List.of(
-                                      "https://digital-health-record-management-sy-eta.vercel.app/"));
+                                      "https://digital-health-record-management-sy-eta.vercel.app/","https://digital-health-record-manageme-git-051e2d-arshad-sudos-projects.vercel.app/","https://digital-health-record-management-system-j4zxz2gro.vercel.app/"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept", "Origin"));
         config.setAllowCredentials(true);
