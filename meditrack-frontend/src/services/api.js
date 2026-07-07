@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use environment variable for production, fallback to localhost for development
-const API_BASE_URL ='https://digital-health-record-management-system.onrender.com';
+// Hardcoded for Vercel deployment
+const API_BASE_URL = 'https://digital-health-record-management-system.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
